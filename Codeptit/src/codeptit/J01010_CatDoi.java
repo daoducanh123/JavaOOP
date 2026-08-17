@@ -52,6 +52,7 @@ public class J01010_CatDoi {
             
             System.out.println("");
             
+            sc.close();
             t --;
         }
         
