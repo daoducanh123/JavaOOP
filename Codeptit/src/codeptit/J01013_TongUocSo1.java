@@ -23,7 +23,7 @@ public class J01013_TongUocSo1 {
             }
         }
         // add vào list
-        for (int i = 2; i < is_prime.length; i++) {
+        for (int i = 2; i < MAXN; i++) {
             if (is_prime[i]) {
                 primes.add(i);
             }
