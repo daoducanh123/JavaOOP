@@ -3,12 +3,11 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-
 public class J01013_TongUocSo1 {
     private static final int MAXN = 2000001; // nghĩa là biến số nguyên nhưng sau khi gán giá trị thì không thể thay đổi nữa.
 
     private static boolean[] is_prime = new boolean[MAXN];
-    private static ArrayList<Integer> primes = new ArrayList<>();
+    private static ArrayList<Integer> primes = new ArrayList<>(); // new ArrayList<Integer>()
 
     private static void SangSoNTO(){
         Arrays.fill(is_prime, true);
@@ -23,11 +22,19 @@ public class J01013_TongUocSo1 {
             }
         }
         // add vào list
-        for (int i = 2; i < is_prime.length; i++) {
+        for (int i = 2; i < MAXN; i++) {
             if (is_prime[i]) {
                 primes.add(i);
             }
         }
+    }
+    
+    private boolean chkNto(int n){
+        if (n < 2) return false;
+        for (int i = 2; i <= (int)Math.sqrt(n); ++i){
+            if (n % i == 0) return false;
+        }
+        return true;
     }
 
     public static void main(String[] args) {
@@ -38,13 +45,17 @@ public class J01013_TongUocSo1 {
         while(t-- > 0){
             int n = sc.nextInt();
             for (Integer p : primes) {
-                if (p * p > n) break;
+                if (p <= Math.sqrt(n)){
 
-                while(n % p == 0){
-                    sum += p;
-                    n /= p;
+                    
+                    while(n % p == 0){
+                        sum += p;
+                        n /= p;
+                    }
                 }
+                else break;
             }
+
             if (n > 1){
                 sum += n;
             }
