@@ -4,8 +4,7 @@
  */
 package codeptit;
 import java.util.*;
-import java.util.Scanner;
-import java.util.Arrays;
+
 /**
  *
  * @author DAGAMING
@@ -18,8 +17,8 @@ public class J02005_Giao {
         int[] a = new int[n];
         int[] b = new int[m];
         
-        boolean[] visitedA = new boolean[105];
-        boolean[] visitedB = new boolean[105];
+        boolean[] visitedA = new boolean[1005];
+        boolean[] visitedB = new boolean[1005];
         
         Arrays.fill(visitedA, false);
         Arrays.fill(visitedB, false);
@@ -40,7 +39,7 @@ public class J02005_Giao {
             }
         }
         
-        for (int i = 0; i < 104 ; ++i){
+        for (int i = 0; i < 1005 ; ++i){
             if (visitedA[i] == visitedB[i] && visitedA[i] == true){
                 System.out.print(i + " ");
             }
