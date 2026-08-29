@@ -17,7 +17,7 @@ public class J02006_Hop {
         int[] a = new int[n];
         int[] b = new int[m];
         
-        boolean[] visited = new boolean[105];
+        boolean[] visited = new boolean[1005];
         
         Arrays.fill(visited, false);
 
@@ -33,7 +33,7 @@ public class J02006_Hop {
                 visited[x] = true;
         }
         
-        for (int i = 0; i < 104 ; ++i){
+        for (int i = 0; i < 1005 ; ++i){
             if (visited[i] == true){
                 System.out.print(i + " ");
             }
