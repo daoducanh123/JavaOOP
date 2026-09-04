@@ -10,12 +10,7 @@ import java.util.*;
  */
 public class J02010_SapXepDoiChoTTiep {
     
-    public static void Print(int arr[], int n){
-        for (int i = 0; i < n; ++i){
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println("");
-    }
+ 
     
     // INPUT
     // 4
@@ -40,7 +35,18 @@ public class J02010_SapXepDoiChoTTiep {
 //Buoc 1: 2 7 5 3
 //Buoc 2: 2 3 7 5
 //Buoc 3: 2 3 5 7
-    
+    public static void Print(int arr[], int n){
+        for (int i = 0; i < n; ++i){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println("");
+    }
+    static boolean isSorted(int[] a, int n){
+        for(int i=0;i<n-1;i++){
+            if(a[i]>a[i+1]) return false;
+        }
+        return true;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
         int n = sc.nextInt();
@@ -60,6 +66,7 @@ public class J02010_SapXepDoiChoTTiep {
             }
                 System.out.print("Buoc " + (i+1) + ": ");
                 Print(arr,n);
+                if(isSorted(arr,n)) break;
         }
     }
 }
