@@ -30,12 +30,6 @@
             }
             System.out.println();
         }
-        static boolean isSorted(int[] a, int n){
-            for(int i=0;i<n-1;i++){
-                if(a[i]>a[i+1]) return false;
-            }
-            return true;
-        }
 
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
@@ -48,22 +42,24 @@
             }
 
             for (int i = 0; i < n - 1; ++i) {
+
                 // Tìm vị trí phần tử nhỏ nhất
                 int pos = i;
+
                 for (int j = i + 1; j < n; ++j) {
                     if (arr[j] < arr[pos]) {
                         pos = j;
                     }
                 }
+
                 // Đổi chỗ
                 int tmp = arr[i];
                 arr[i] = arr[pos];
                 arr[pos] = tmp;
-                
+
                 // In từng bước
                 System.out.print("Buoc " + (i + 1) + ": ");
                 Print(arr, n);
-                if(isSorted(arr,n)) break;
             }
         }
     }
