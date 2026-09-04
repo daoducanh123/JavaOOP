@@ -45,6 +45,12 @@ public class J02013_SapXepNoiBot {
         }
         System.out.println("");
     }
+    static boolean isSorted(int[] a, int n){
+        for(int i=0;i<n-1;i++){
+            if(a[i]>a[i+1]) return false;
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -64,11 +70,9 @@ public class J02013_SapXepNoiBot {
                     arr[j+1] = tmp;
                 }
             }
-            if (isSwapped){
-                System.out.print("Buoc" + " " + (i+1) + ": ");
-                in(arr, n);
-            }
-            
+            System.out.print("Buoc" + " " + (i+1) + ": ");
+            in(arr, n);
+            if(isSorted(arr,n)) break;
         }
     }
 }
