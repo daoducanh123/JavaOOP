@@ -51,19 +51,15 @@ public class J02010_SapXepDoiChoTTiep {
         }
         
         for (int i = 0; i < n-1; ++i){
-            boolean isSwapped = false;
             for (int j = i + 1; j < n; ++j){
                 if (arr[j]< arr[i]){
                     int tmp = arr[i];
                     arr[i] = arr[j];
                     arr[j] = tmp;
-                    isSwapped = true;
                 }
             }
-            if (isSwapped){
                 System.out.print("Buoc " + (i+1) + ": ");
                 Print(arr,n);
-            }
         }
     }
 }
