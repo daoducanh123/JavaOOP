@@ -61,10 +61,8 @@ public class J02013_SapXepNoiBot {
         }
         
         for (int i = 0; i < n - 1; ++i){
-            boolean isSwapped = false;
             for (int j = 0; j < n-1-i; ++j){
                 if (arr[j] > arr[j+1]){
-                    isSwapped = true;
                     int tmp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = tmp;
