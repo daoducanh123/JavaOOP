@@ -14,7 +14,8 @@ public class ICPC0106_DoiCoSo_2 {
         Scanner sc = new Scanner (System.in);
         int n = sc.nextInt();
         while (n -->0){
-
+            
+            String hex = "0123456789ABCDEF";
             int b = sc.nextInt();
             int c = 0;
             sc.nextLine();
@@ -55,15 +56,17 @@ public class ICPC0106_DoiCoSo_2 {
             }
             s = paddString + s;
             
-            ArrayList<Integer> res = new ArrayList<Integer>();
             
             for (int i = 0; i < s.length(); i += c){
                 String group = s.substring(i, i+c);
                 int num = Integer.parseInt(group,2);
-                res.add(num);
-            }
-            for (int i = 0; i< res.size();++i){
-                System.out.print(res.get(i));
+                if (b == 16){
+                    char res  = hex.charAt(num);
+                    System.out.print(res);
+                }
+                else{
+                    System.out.print(num);
+                }
             }
             System.out.println("");
         }
