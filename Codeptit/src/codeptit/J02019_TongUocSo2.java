@@ -10,7 +10,7 @@ public class J02019_TongUocSo2 {
         long[] sum = new long[b + 1];
 
         // sieve
-        for (int i = 1; i <= b; i++) { // ước 1 -> b
+        for (int i = 1; i <= b/2; i++) { // ước 1 -> b
             for (int j = 2*i; j <= b; j += i) { // 2b 3b 4b 5b
                 sum[j] += i;
             }
