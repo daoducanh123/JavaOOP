@@ -84,8 +84,9 @@ public class NewClass1 {
                         break;
 
                     case 4:
-                        // listSinhVien.sort(Comparator.comparingDouble(sv -> sv.gpa));
-                        listSinhVien.sort((sv1, sv2) -> Float.compare(sv1.gpa, sv2.gpa));
+                        Comparator <SinhVien> cmp = (sinhVien1, sinhVien2)->Float.compare(sinhVien1.gpa, sinhVien2.gpa);
+                        listSinhVien.sort(cmp);
+                        
                         for (SinhVien sv : listSinhVien) {
                             sv.output();
                         }
