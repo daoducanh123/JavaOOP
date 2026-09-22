@@ -1,88 +1,107 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package codeptit;
 import java.util.*;
-import java.io.FileNotFoundException;
 import java.io.File;
 import java.io.PrintWriter;
+import java.io.FileNotFoundException;
 
-/**
- *
- * @author DAGaming
- */
+
 public class MATRIX_TongHieuFileHandling {
-    public static class classMaTran{
+    public static class Matrix{
         private int m;
         private int n;
-        int[][] matrix;
+        private int[][] value;
         
-        public classMaTran(int m, int n){
+        public Matrix(int m, int n){
             this.m = m;
             this.n = n;
-            this.matrix = new int [m][n];
+            this.value = new int [m][n];
         }
         
+        // Đọc value từng thằng
         public void Read(Scanner sc){
             for (int i = 0; i < m; ++i){
                 for (int j = 0; j < n; ++j){
-                    this.matrix[i][j]= sc.nextInt();
+                    this.value[i][j] = sc.nextInt();
                 }
             }
         }
         
-        public classMaTran Add(classMaTran otherMaTran){
-            classMaTran maTranTong = new classMaTran(m,n);
+        public Matrix Tong(Matrix other){
+            Matrix tong = new Matrix (m,n);
+            
             for (int i = 0; i < m; ++i){
-                for (int j = 0; j < n ;++j){
-                    maTranTong.matrix[i][j] = this.matrix[i][j] + otherMaTran.matrix[i][j];
+                for (int j = 0; j < n; ++j){
+                    tong.value[i][j] = this.value[i][j] + other.value[i][j];
                 }
             }
-            return maTranTong;
+            return tong;
         }
-        
-        public classMaTran Sub(classMaTran otherMaTran){
-            classMaTran maTranHieu = new classMaTran(m,n);
+            
+        public Matrix Hieu(Matrix other){
+            Matrix hieu = new Matrix (m,n);
+            
             for (int i = 0; i < m; ++i){
-                for (int j = 0; j < n ;++j){
-                    maTranHieu.matrix[i][j] = this.matrix[i][j] - otherMaTran.matrix[i][j];
+                for (int j = 0; j < n; ++j){
+                    hieu.value[i][j] = this.value[i][j] - other.value[i][j];
                 }
             }
-            return maTranHieu;
+            return hieu;
         }
         
-        public void Write (String fileName) throws FileNotFoundException{
-            PrintWriter writer = new PrintWriter(fileName);
-            for (int i = 0; i< m; ++i){
-                for (int j = 0 ;j < n; ++j){
-                    writer.print(this.matrix[i][j]+ " ");
+        public  void Write1(PrintWriter writer1){
+            for (int i = 0; i < m; ++i){
+                for (int j = 0; j < n; ++j){
+                    writer1.print(this.value[i][j] + " ");
+
                 }
-                writer.println();
+                writer1.println();
+            }
+            
+        }
+        public  void Write2(PrintWriter writer2){
+            for (int i = 0; i < m; ++i){
+                for (int j = 0; j < n; ++j){
+                    writer2.print(this.value[i][j] + " ");
+                }
+                writer2.println();
             }
         }
     }
-
+    
     public static void main(String[] args) throws FileNotFoundException {
-        File f = new File ("Mt.data");
+        // Write
+        PrintWriter writer1 = new PrintWriter("tong.txt");
+        PrintWriter writer2 = new PrintWriter("hieu.txt");
+
+        // Read
+        File f = new File("DATA.in");
         Scanner sc = new Scanner(f);
-        
+        // → đọc số đầu tiên trong file.
         int m = sc.nextInt();
+        // → đọc số T2 trong file.
         int n = sc.nextInt();
         
-        classMaTran A = new classMaTran(m,n);
-        classMaTran B = new classMaTran(m,n);
+        Matrix a = new Matrix (m,n);
+        Matrix b = new Matrix (m,n);
         
-        A.Read(sc);
-        B.Read(sc);
+        // Lấy value
+        a.Read(sc);
+        b.Read(sc);
+       
+        // Tong
+        Matrix tong = a.Tong(b);
         
+        // Hieu
+        Matrix hieu = a.Hieu(b);
         
-        classMaTran tong = A.Add(B);
-        classMaTran hieu = A.Sub(B);
+        // Ghi
+        tong.Write1(writer1);
+        hieu.Write2(writer2);
         
-        tong.Write("tong.txt");
-        hieu.Write("hieu.txt");
-        
+        writer1.close();
+        writer2.close();
         sc.close();
     }
+    
 }
