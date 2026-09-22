@@ -3,23 +3,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package codeptit;
+import java.util.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.io.PrintWriter;
 /**
  *
  * @author DAGaming
  */
 public class J07001_DocFileVanBan {
-    public static void main(String[] args) throws FileNotFoundException {
-         File f = new File("DATA.in");
-         //File f = new File("C:\\Users\\DAGaming\\Documents\\DATA.in");
+    public static void main(String[] args) throws FileNotFoundException { // ko có try catch -> đẩy lên cho jvm xử lý, main ko xử lý 
+        File f = new File ("DATA.in");
         Scanner sc = new Scanner(f);
-        while (sc.hasNextLine()){
-            System.out.println(sc.nextLine());
+        long sum = 0;
+        while (sc.hasNext()){
+            String token = sc.next();
+            try{
+                int number = Integer.parseInt(token);
+                sum += number;
+            }
+            catch (NumberFormatException e){ // Không phải số int → bỏ qua
+            }
         }
-        sc.close();
+        System.out.println(sum);
     }
-    
 }
     
