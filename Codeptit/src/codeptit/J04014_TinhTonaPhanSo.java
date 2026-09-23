@@ -9,12 +9,12 @@ import java.util.*;
  * @author DAGAMING
  */
 public class J04014_TinhTonaPhanSo {
-    public static int gcd(int a, int b) {
+    public static long gcd(long  a, long b) {
         a = Math.abs(a);
         b = Math.abs(b);
 
         while (b != 0) {
-            int tmp = a;
+            long tmp = a;
             a = b;
             b = tmp % b;
         }
@@ -23,14 +23,14 @@ public class J04014_TinhTonaPhanSo {
     }
     
     public static class PhanSo{
-        private int tu, mau;
+        private long tu, mau;
         
-        public PhanSo(int a, int b){
+        public PhanSo(long a, long b){
             this.tu = a;
             this.mau = b;
         }   
         public static void Rutgon(PhanSo p){
-            int GCD = gcd (p.tu, p.mau);
+            long GCD = gcd (p.tu, p.mau);
             p.tu /= GCD;
             p.mau /= GCD;
             if (p.mau < 0) {
@@ -63,10 +63,11 @@ public class J04014_TinhTonaPhanSo {
         Scanner sc = new Scanner (System.in);
         int t = sc.nextInt();
         while (t-->0){
-            int a = sc.nextInt();
-            int b = sc.nextInt();
-            int c = sc.nextInt();
-            int d = sc.nextInt();
+            long a = sc.nextLong();
+            long b = sc.nextLong();
+            long c = sc.nextLong();
+            long d = sc.nextLong();
+
             PhanSo p1 = new PhanSo(a,b);
             PhanSo p2 = new PhanSo(c,d);
             PhanSo.Rutgon(p1);
