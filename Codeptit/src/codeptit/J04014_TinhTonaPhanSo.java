@@ -33,10 +33,7 @@ public class J04014_TinhTonaPhanSo {
             long GCD = gcd (p.tu, p.mau);
             p.tu /= GCD;
             p.mau /= GCD;
-            if (p.mau < 0) {
-                p.tu = -p.tu;
-                p.mau = -p.mau;
-            }   
+ 
         }
         
         public PhanSo Tong (PhanSo other){
