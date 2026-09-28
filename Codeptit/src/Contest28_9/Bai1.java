@@ -48,7 +48,10 @@ public class Bai1 {
                 return res;
             }
         }
-        
+        @Override
+        public String toString(){
+            return getMa() + " " + name + " " + soLuong + " " + gia + " " + nhaSX + " " + getThanhTien();
+        }
         
     }
     

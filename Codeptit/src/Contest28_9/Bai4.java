@@ -27,13 +27,14 @@ public class Bai4 {
             in.nextLine();
             
         } 
-        public String chuanHoa(String hoTen){
+        public void chuanHoa(String hoTen){
             this.hoten = this.hoten.trim().toLowerCase();
-            this.hoten = this.hoten.split("//s+");
-            char[] arr = this.hoten.toLowerCase().toCharArray();
-            
-            for (int i = 0; i < arr.length(); ++i){
-                
+            String[] arr = this.hoten.split("\\s+");
+            // dao|duc|anh
+            for (int i = 0; i < arr.length; ++i){
+                char c = arr[i].charAt(0);
+                c = Character.toUpperCase(c);
+                arr[i] = c + arr[i].substring(1);
             }
             
         }
