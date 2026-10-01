@@ -22,14 +22,17 @@ public class J03013_HieuSonguyenlon1 {
             int maxLength = Math.max(x.toString().length(),y.toString().length());
             int resLength = res.toString().length();
             
-            int padding = maxLength - resLength;
-            
-                String resString = res.toString();
-            for (int i = 0; i < padding; ++i){
-                resString = "0"+ resString;
-            }
-            
+            String resString = String.format("%0" + maxLength + "d", res);
+
             System.out.println(resString);
+            //int padding = maxLength - resLength;
+            
+              //  String resString = res.toString();
+            //for (int i = 0; i < padding; ++i){
+              //  resString = "0"+ resString;
+            //}
+            
+            //System.out.println(resString);
         }
     }
 }
