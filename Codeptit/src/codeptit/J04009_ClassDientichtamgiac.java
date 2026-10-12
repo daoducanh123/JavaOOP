@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class J04009_ClassDientichtamgiac {
 
     static class Point {
         private double x, y;
