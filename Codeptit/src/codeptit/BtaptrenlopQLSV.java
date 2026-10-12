@@ -50,10 +50,8 @@ public class BtaptrenlopQLSV {
             for (SinhVien s : a) {
                 if (s.maString.equals(maString)) {
                     System.out.println(s);
-                    break;
                 }
             }
-            System.out.println("NOT FOUND");
         }
 
         @Override
