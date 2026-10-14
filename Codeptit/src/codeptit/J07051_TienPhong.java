@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 import java.time.*;
 import java.time.format.*;
-import java.time.temporal.ChronoUnit;
+import java.time.temporal.*;
 
 public class J07051_TienPhong {
     public static class ThongTin {
@@ -49,7 +49,7 @@ public class J07051_TienPhong {
             this.ngayTra = String.format("%02d/%02d/%04d", ngay2, thang2, nam2);
         }
         public void TinhTien() {
-            DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy"); // bài này ko cần chuẩn ngày vì ko cần in -> ko có chuanngay() thì dùng "d/M/yyyy"
 
             LocalDate nhan = LocalDate.parse(ngayNhan.trim(), fmt);
             LocalDate tra = LocalDate.parse(ngayTra.trim(), fmt);
