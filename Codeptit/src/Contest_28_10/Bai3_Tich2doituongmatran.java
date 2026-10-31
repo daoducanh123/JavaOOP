@@ -45,7 +45,7 @@ public class Bai3_Tich2doituongmatran {
                     if (j>0) sb.append(" ");
                     sb.append(a[i][j]);
                 }
-                if (i < n -1) sb.append("\n");
+                 sb.append("\n");
             }return sb.toString();
         }
     }
