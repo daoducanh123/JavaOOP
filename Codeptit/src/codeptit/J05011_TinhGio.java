@@ -46,7 +46,8 @@ public class J05011_TinhGio {
             LocalTime gioRa = LocalTime.parse(strGioRa.trim(),fmt);
             long s = ChronoUnit.SECONDS.between(gioVao, gioRa);
             long h = s / 3600;
-            long p = s % 3600 / 60;
+            long tmp = s - h * 3600;
+            long p = tmp / 60;
             
             Gamer gamer = new Gamer (ma,name,h,p);
             listGamer.add(gamer);
