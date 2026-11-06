@@ -103,7 +103,7 @@ public class B1 {
             public boolean isSo(String chuoiSo) {
                 if (chuoiSo == null || chuoiSo.length() > 9 || chuoiSo.length() < 1) return false;
                 for (int i = 0; i < chuoiSo.length();++i){
-                    if (chuoiSo.charAt(i) < '1' || chuoiSo.charAt(i) > '9') return false;
+                    if (chuoiSo.charAt(i) < '0' || chuoiSo.charAt(i) > '9') return false;
                 }
                 return true;
             }
@@ -135,7 +135,7 @@ public class B1 {
             public void input (Scanner scanner){
                 //ma
                 while (true){
-                    String ma = scanner.nextLine();
+                    String maVanDongVien = scanner.nextLine();
                     if (!isMa(maVanDongVien)){
                         System.out.println("Nhap Lai!");
                     }
