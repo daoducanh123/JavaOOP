@@ -57,8 +57,8 @@ public class B1_VanDongVien {
         public int cuLyChay;
         public int soHuyChuong;
 
-        public VDVChay() {
-        }
+            public VDVChay() {
+            }
 
         public VDVChay(String maVanDongVien, String hoTen, int cuLyChay,
                        int soHuyChuong, double luongCoBan) {
