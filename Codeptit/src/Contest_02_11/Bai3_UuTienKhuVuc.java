@@ -52,7 +52,7 @@ public class Bai3_UuTienKhuVuc {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(); sc.nextLine();
         ArrayList<ThiSinh> listThiSinh = new ArrayList<>();
-        while (n-->0){
+        while (n-->0){  
             String ma = sc.nextLine();
             String name = sc.nextLine();
             String danToc = sc.nextLine();
