@@ -22,7 +22,7 @@ public class J07054_TinhDiemTrungBinh {
         }
 
         public void ChuanHoa() {
-            String[] arrName = this.name.trim().toLowerCase().split("\\s+");
+            String[] arrName = this.name.trim().toLowerCase().split("\\s+"); 
             for (int i = 0; i < arrName.length; ++i) {
                 char c = Character.toUpperCase(arrName[i].charAt(0));
                 arrName[i] = c + arrName[i].substring(1);
