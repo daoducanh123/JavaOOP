@@ -21,20 +21,15 @@ public class J03021_DienThoaiCucGach {
         int n = sc.nextInt();
         sc.nextLine();
 
-        ArrayList<String>[] list = new ArrayList[10];
-
-        for (int i = 0; i <= 9; ++i) {
-            list[i] = new ArrayList<>();
-        }
-
-        list[2].add("ABC");
-        list[3].add("DEF");
-        list[4].add("GHI");
-        list[5].add("JKL");
-        list[6].add("MNO");
-        list[7].add("PQRS");
-        list[8].add("TUV");
-        list[9].add("WXYZ");
+        ArrayList<String> list = new ArrayList<>();
+        list.add("ABC");
+        list.add("DEF");
+        list.add("GHI");
+        list.add("JKL");
+        list.add("MNO");
+        list.add("PQRS");
+        list.add("TUV");
+        list.add("WXYZ");
 
         while (n-- > 0) {
             String s = sc.nextLine().toUpperCase();
@@ -43,14 +38,15 @@ public class J03021_DienThoaiCucGach {
             for (int k = 0; k < s.length(); ++k) {
                 char c = s.charAt(k);
 
-                for (int i = 2; i <= 9; ++i) {
-                    if (list[i].get(0).contains(String.valueOf(c))) {
-                        stringNum.append(i);
+                for (int i = 0; i <= 7; ++i) {
+                    if (list.get(i).contains(String.valueOf(c))) {
+                        stringNum.append(i+2);
                         break;
                     }
                 }
             }
-
+            
+            // StringBuilder -> String thường
             if (check(stringNum.toString())) {
                 System.out.println("YES");
             } else {
